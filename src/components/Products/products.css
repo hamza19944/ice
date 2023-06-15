@@ -38,4 +38,8 @@
 .products .container .product .name-price{
     display: flex;
     flex-direction: column;
-    align-item
+    align-items: center;
+}
+.products .container .product .name-price span:first-child{
+    color: var(--main-font-color);
+}
