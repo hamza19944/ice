@@ -1,0 +1,39 @@
+:root{
+    --main-color: #b84949;
+    --second-color: #f7f7f7;
+    --main-font-color: #8b8b8b;
+    --margin-size: 40px;
+}
+html{
+    scroll-behavior: smooth;
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 'Lemonada', cursive;
+}
+/* start components */
+.btn{
+    border: 3px solid black;
+    margin: 10px auto;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 5px 10px;
+    font-size: 20px;
+    background: none;
+    color: black;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: black;
+    color: var(--main-color);
+    border: none;
+    padding: 8px 13px;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}

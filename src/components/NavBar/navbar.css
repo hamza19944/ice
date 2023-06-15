@@ -1,0 +1,295 @@
+header{
+    width: 100%;
+    height: 100px;
+    /* background-color: black; */
+    background-color: var(--second-color);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+    box-shadow: 0 0px 1px #8b8b8b;
+}
+/* start scrolling  */
+header.scroll{
+    height: 50px;
+    position: fixed;
+    margin: 0;
+}
+header.scroll .logo{
+    position: absolute;
+    width: fit-content;
+    /* padding: 10px 20px; */
+    background-color: var(--main-color);
+    border-radius: 20px;
+    bottom: -60%;
+    z-index: 3;
+}
+header.scroll .logo a{
+    color: #fff;
+}
+header.scroll .logo a img{
+    margin-top: 5px;
+}
+/* end scrolling */
+header a{
+    /* color: white; */
+    color: var(--main-color);
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+header .contact-all{
+    flex: 1;
+    margin-right: 50px;
+}
+header .contact-all ul{
+    display: flex;
+    width: fit-content;
+    list-style: none;
+    padding: 0;
+    margin: auto;
+}
+header .contact-all ul li{
+    margin: 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+header .contact-all ul li a{
+    text-decoration: none;
+}
+header .contact-all ul li:hover a{
+    color: var(--main-color);
+}
+header .logo{
+    position: absolute;
+    /* top: 50%; */
+    /* transform: translateY(-50%); */
+    height: 100px;
+}
+header .logo, header .cart-shopping{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+header .logo a{
+    text-decoration: none;
+}
+header .logo a img{
+    height: 100%;
+}
+/* start logo animation */
+
+/* end logo animation */
+header .cart-shopping{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    cursor: pointer;
+    margin-left: 50px;
+}
+header .cart-shopping p{
+    border: 1px solid var(--main-color);
+    padding: 4px;
+    color: var(--main-color);
+}
+/* start sidebar */
+header .side-bar{
+    position: absolute;
+    right: 0;
+    top: 100%;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.7);;
+    height: calc(100vh - 100px);
+    width: 300px;
+    flex-direction: column;
+    align-items: center;
+}
+header .side-bar.open{
+    display: flex;
+}
+header .back{
+    position: absolute;
+    background-color: rgba(0, 0, 0, .7);
+    min-width: 100%;
+    min-height: 100vh;
+    width: 100%;
+    z-index: -1;
+    left: 0;
+    top: 50px;
+    height: 600px;
+    display: none;
+}
+header .back.top.open, header .back.open {
+    display: block;
+}
+header .side-bar h1{
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    padding: 8px;
+}
+header .side-bar .products{
+    flex: 8;
+    width: 100%;
+    overflow-x: hidden;
+}
+header .side-bar .products h1{
+    text-align: center;
+}
+header .side-bar .product{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 5px;
+    position: relative;
+}
+header .side-bar .products .img{
+    width: 70px;
+    border-radius: 50%;
+}
+header .side-bar .products .img img{
+    width: 100%;
+    border-radius: 50%;
+    padding: 10px;
+}
+header .side-bar .products .product .price-card{
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+header .side-bar .products .product::after{
+    content: "";
+    position: absolute;
+    width: 70%;
+    border: 1px solid white;
+    bottom: 0;
+}
+header .side-bar .sum{
+    flex: 1 1;
+    /* margin: 10px auto; */
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+}
+header .side-bar .card-btns{
+    flex: 1 1;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 10px 0;
+}
+header .side-bar .card-btns > button{
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    cursor: pointer;
+    height: fit-content;
+    transition: all .3s ease-in-out;
+}
+header .side-bar .card-btns > button:hover{
+    background-color: transparent;
+    color: black;
+}
+/* end sidebar web*/
+/* start responsive */
+@media (max-width: 700px) {
+    .container{
+        margin-top: 20px;
+    }
+    header .contact-all{
+        display: none;
+    }
+    header .contact-all.openNav{
+        display: flex;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, .6);
+        margin-right: 0;
+    }
+    header .contact-all.openNav.top{
+        top: 50px;
+    }
+    header .contact-all.openNav ul{
+        display: block;
+        padding: 20px;
+    }
+    header .contact-all.openNav ul li{
+        padding: 10px 20px;
+        position: relative;
+    }
+    header .contact-all.openNav ul li:hover a{
+        font-size: 25px;
+        transition: all .3s ease-in-out;
+    }
+    header .contact-all.openNav ul li:not(:last-child)::after{
+        content: "";
+        width: 100%;
+        height: 1px;
+        background-color: var(--main-color);
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+    }
+    header .bar{
+        display: flex;
+        flex: 1;
+    }
+    header .bar div{
+        width: fit-content;
+        cursor: pointer;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+    }
+    header .bar span{
+        background-color: var(--main-color);
+        width: 30px;
+        height: 3px;
+        margin: 3px;
+        border-radius: 20px;
+    }
+}
+@media (max-width: 450px) {
+    header .contact-all.openNav{
+        width: 100%;
+    }
+    header .contact-all ul li a {
+        letter-spacing: 3px;
+    }
+    header .cart-shopping.cart-small{
+        display: flex;
+    }
+    header .cart-shopping.cart-small div{
+        position: relative;
+    }
+    header .cart-shopping.cart-small div span{
+        position: absolute;
+        top: -10px;
+        right: -15px;
+        color: var(--main-color);
+    }
+    header .side-bar.open{
+        width: 100%;
+    }
+}
