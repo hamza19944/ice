@@ -5,9 +5,7 @@ import freeShip from "../../assets/features/free-delivery.png"
 import certificate from "../../assets/features/contract.png"
 import credit from "../../assets/features/credit-card.png"
 import support from "../../assets/features/customer-service.png"
-// import Types from "./Types";
 import ScrollSection from "./ScrollSection";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Products from "../Products/Products";
 import WhyUs from "../Why-us/Why-us";
 

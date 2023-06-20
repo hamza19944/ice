@@ -142,7 +142,7 @@
     margin-top: 100px;
     background-color: var(--second-color);
     position: relative;
-    background: url(C:\Users\hamza\OneDrive\Desktop\programming\old\JS_projects\filter\ice-cream\src\assets\delicious-ice-cream-cones.jpg);
+    background: url("../../assets/delicious-ice-cream-cones.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
