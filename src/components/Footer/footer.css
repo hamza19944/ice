@@ -1,0 +1,83 @@
+.footer{
+    border: 1px solid var(--main-color);
+    background: #0c242e;
+    color: var(--second-color);
+    display: flex;
+    /* grid-template-columns: 50% 27% 20%; */
+    /* column-gap: 3%; */
+    justify-content: center;
+    padding: 40px 10px;
+    font-weight: 200;
+    flex-wrap: wrap;
+}
+/* start general  */
+.footer .footer-item{
+    min-width: 300px;
+    padding: 0px 20px;
+    flex: 1;
+}
+.footer .quick-links h3, .footer .follow-us h3{
+    margin-bottom: 25px;
+    font-size: 25px;
+    position: relative;
+}
+.footer .quick-links h3::after, .footer .follow-us h3::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    left: 0;
+    bottom: -10px;
+    border: 1px dashed;
+}
+.footer ul{
+    list-style: none;
+}
+.icon{
+    color: rgb(255 255 255 / 40%);
+}
+/* end general */
+
+.footer .with-logo{
+    display: flex;
+    flex-direction: column;
+}
+.footer .with-logo .img{
+    width: 70%;
+    flex: 1
+}
+.footer .with-logo .img img{
+    width: 100%;
+}
+.footer .quick-links li{
+    position: relative;
+    padding-top: 5px;
+    padding-left: 10px;
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.footer .quick-links li::before{
+    content: "";
+    position: absolute;
+    border: 7px solid;
+    left: -5%;
+    top: 40%;
+    border-color: transparent transparent transparent rgb(255 255 255 / 40%);
+}
+.footer  .quick-links li:hover{
+    cursor: pointer;
+    transform: translateX(15px);
+    color: var(--main-color);
+    /* color: rgb(255 255 255 / 40%); */
+}
+.footer .follow-us{}
+.footer .follow-us .follow-us-icons{
+    display: flex;
+}
+.footer .follow-us .follow-us-icons li, li .icon{
+    margin-right: 10px;
+}
+.footer .follow-us ul li .brands-icons{
+    font-size: 30px;
+    cursor: pointer;
+}

@@ -1,7 +1,7 @@
 .land{
     height: calc(100vh - 80px);
     display: flex;
-    background-image: url(C:\Users\hamza\OneDrive\Desktop\programming\old\JS_projects\filter\ice-cream\src\assets\background3.jpg);
+    background-image: url("../../assets/8375776.png");
     background-size: cover;
     position: relative;
     top: 100px;
@@ -78,10 +78,11 @@
 }
 .features .our-features h1, .services .head h1{
     text-transform: uppercase;
-    color: var(--main-font-color);
+    color: var(--head-font-color);
     font-weight: 500;
     letter-spacing: .2rem;
     margin-bottom: 20px;
+    text-align: center;
 }
 .features .container{
     display: flex;
@@ -194,14 +195,31 @@
         flex-direction: column-reverse;
     }
 }
+@media (max-width: 700px){
+    .about .container{
+        flex-direction: column-reverse;
+    }
+    .about .container .about-us{
+        margin-right: 0;
+    }
+    .about .container .image{
+        width: 100%;
+        max-width: fit-content;
+    }
+}
 /* end about */
 /* start services */
 .services, .types, .scroll-section{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 50px 0;
+    /* padding: 50px 0; */
     color: var(--main-color);
+}
+.services{
+    padding: var(--margin-size);
+}
+.scroll-section{
 }
 .services .head{
     display: flex;
@@ -268,39 +286,57 @@
     padding: 10px;
     position: relative;
 }
-.scroll-section .container .img{
+.scroll-section .img{
     width: 100%;
     position: relative;
     overflow: hidden;
 }
-.scroll-section .container .img img{
+.scroll-section .img img{
     width: 100%;
-    height: 300px;
     position: relative;
     z-index: 1;
 }
-.scroll-section .container .img p{
+.scroll-section .img .para{
     position: absolute;
-    background-color: rgba(255, 255, 255, 0.7);
-    color: var(--main-font-color);
     z-index: 3;
-    padding: 10px;
-    bottom: -85px;
-    left: 0;
+    top: 50%;
     transition: all 0.4s ease-in-out;
+    left: 40%;
+    width: 35%;
+    font-size: 100%;
+    transform: translate(50%, -50%);
 }
-.scroll-section .container .img:hover p{
-    position: absolute;
-    left: 0;
-    bottom: 0;
+.scroll-section .img .para h2{
+    
 }
-.scroll-section .container .img:hover::after{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    left: 0;
-    z-index: 2;
+.scroll-section .img .para p{
+    color: var(--main-font-color);
+    font-weight: 300;
+}
+@media (min-width: 1000px) {
+    .scroll-section .img .para{
+        top: 35%;
+    }
+}
+@media (max-width: 425px) {
+    .scroll-section .img .para p{
+        font-size: 9px;
+    }
+}
+@media (max-width: 375px){
+    .scroll-section .img .para h2{
+        font-size: 15px;
+    }
+    .scroll-section .img .para p{
+        font-size: 8px;
+    }
+}
+@media (max-width: 320px){
+    .scroll-section .img .para h2{
+        font-size: 10px;
+    }
+    .scroll-section .img .para p{
+        font-size: 7px;
+    }
 }
 /* end ScrollSection */

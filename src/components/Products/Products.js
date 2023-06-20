@@ -9,6 +9,47 @@ const Products = () => {
                 <div className="product">
                     <div className="img">
                         <img src={image} alt="" />
+                        <button className="add">+</button>
+                    </div>
+                    <div className="name-price">
+                        <span>delicious ice-cream</span>
+                        <span>150</span>
+                    </div>
+                </div>
+                <div className="product">
+                    <div className="img">
+                        <img src={image} alt="" />
+                        <button className="add">+</button>
+                    </div>
+                    <div className="name-price">
+                        <span>delicious ice-cream</span>
+                        <span>150</span>
+                    </div>
+                </div>
+                <div className="product">
+                    <div className="img">
+                        <img src={image} alt="" />
+                        <button className="add">+</button>
+                    </div>
+                    <div className="name-price">
+                        <span>delicious ice-cream</span>
+                        <span>150</span>
+                    </div>
+                </div>
+                <div className="product">
+                    <div className="img">
+                        <img src={image} alt="" />
+                        <button className="add">+</button>
+                    </div>
+                    <div className="name-price">
+                        <span>delicious ice-cream</span>
+                        <span>150</span>
+                    </div>
+                </div>
+                <div className="product">
+                    <div className="img">
+                        <img src={image} alt="" />
+                        <button className="add">+</button>
                     </div>
                     <div className="name-price">
                         <span>delicious ice-cream</span>

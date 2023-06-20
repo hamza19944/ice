@@ -9,6 +9,7 @@ import support from "../../assets/features/customer-service.png"
 import ScrollSection from "./ScrollSection";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Products from "../Products/Products";
+import WhyUs from "../Why-us/Why-us";
 
 const Home = () => {
     return (
@@ -67,6 +68,7 @@ const Home = () => {
         <Services />
         {/* <Types /> */}
         <ScrollSection />
+        <WhyUs />
         <Products />
     </>
     );

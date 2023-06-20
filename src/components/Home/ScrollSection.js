@@ -1,21 +1,13 @@
-import iceberry from "../../assets/partner/iceberry.jpg"
-import nevaholad from "../../assets/partner/e5fd8e91a99b9724b1f0478b08.jpg"
+import image from "../../assets/scoop-down-bright-fruit-ice-cream-paper-sheet.jpg" 
 const ScrollSection = () => {
     return (
         <div className="scroll-section">
             <h1>Our Partners</h1>
-            <div className="container">
-                <div className="partner">
-                    <div className="img">
-                        <span><img src={iceberry} alt="" /></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
-                </div>
-                <div className="partner">
-                    <div className="img">
-                        <span><img src={nevaholad} alt="" /></span>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                    </div>
+            <div className="img">
+                <img src={image} alt="" />
+                <div className="para">
+                    <h2>Нева-Холод</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptates, earum nam nihil sunt quisquam iure accusamus eligendi optio facilis consequuntur mollitia pariatur saepe iusto soluta quod aliquam ipsam blanditiis.</p>
                 </div>
             </div>
         </div>

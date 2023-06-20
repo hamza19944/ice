@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import "./navbar.css"
-import image from "../../assets/cake-1.jpg"
 import logo from "../../assets/logo.png"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faShoppingBasket } from "@fortawesome/fontawesome-free-solid";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const NavBar = ({ cartItem, handleEmpty }) => {
     const [open, setOpen] = useState(false);
@@ -103,7 +101,7 @@ const NavBar = ({ cartItem, handleEmpty }) => {
                     <span className="num-items">{total[0] ? total[0] : 0}</span>
                 </div>
             </div>) : (<div className="cart-shopping">
-                <p onClick={handleClick}><span className="num-items"></span> {total[0] ? total[0] : "Items"} - $ <span className="price">{total[1]}</span></p>
+                <p onClick={handleClick}><span className="num-items"></span> {total[0] ? total[0] : <FontAwesomeIcon icon="fa-solid fa-cart-shopping"/>}<span className="price">{total[1]}</span></p>
             </div>)
         )
     }

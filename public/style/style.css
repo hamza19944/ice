@@ -1,7 +1,8 @@
 :root{
-    --main-color: #b84949;
+    --main-color: #F06292;
     --second-color: #f7f7f7;
-    --main-font-color: #8b8b8b;
+    --head-font-color: #49BEF2;
+    --main-font-color: #757F95;
     --margin-size: 40px;
 }
 html{
