@@ -1,6 +1,6 @@
 const Types = () => {
     return (
-        <div className="types">
+        <section className="types">
             <h1>Types</h1>
             <div className="container">
                 <div className="card">
@@ -20,7 +20,7 @@ const Types = () => {
                     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
  

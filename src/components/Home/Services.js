@@ -5,7 +5,7 @@ import two from "../../assets/services/two.png"
 
 const Services = () => {
     return (
-        <div className="services">
+        <section className="services">
             <div className="head">
                 <span>Services</span>
                 <h1>Quality Services For You</h1>
@@ -36,7 +36,7 @@ const Services = () => {
                     <a href="#">Read More + icon</a>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
  

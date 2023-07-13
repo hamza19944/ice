@@ -1,22 +1,30 @@
 header{
     width: 100%;
     height: 100px;
-    /* background-color: black; */
     background-color: var(--second-color);
     color: white;
+    position: fixed;
+    transition: all 0.3s ease-in-out;
+    z-index: 101;
+    box-shadow: 0 0px 1px #8b8b8b;
+}
+header .container{
+    width: 100%;
+    height: 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    position: fixed;
     transition: all 0.3s ease-in-out;
-    z-index: 100;
-    box-shadow: 0 0px 1px #8b8b8b;
+    z-index: 101;
 }
 /* start scrolling  */
 header.scroll{
     height: 50px;
     position: fixed;
     margin: 0;
+}
+header.scroll .container{
+    height: 50px;
 }
 header.scroll .logo{
     position: absolute;
@@ -42,27 +50,44 @@ header a{
     letter-spacing: 1px;
 }
 header .contact-all{
+    display: flex;
     flex: 1;
+    height: 100%;
     margin-right: 50px;
+    align-items: center;
 }
-header .contact-all ul{
+header .contact-all .contact{
+    height: 100%;
+    align-items: center;
+}
+header .contact-all ul.contact{
     display: flex;
     width: fit-content;
     list-style: none;
     padding: 0;
     margin: auto;
 }
-header .contact-all ul li{
+header .contact-all ul.contact li{
     margin: 0 10px;
     font-size: 20px;
     font-weight: bold;
     letter-spacing: 1px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
-header .contact-all ul li a{
+header .contact-all ul.contact li a{
+    display: flex;
+    align-items: center;
     text-decoration: none;
+    height: 100%;
 }
-header .contact-all ul li:hover a{
+header .contact-all ul.contact li:hover a{
     color: var(--main-color);
+    border-bottom: none;
+}
+header .contact-all ul.contact li a.active{
+    border-bottom: 2px solid var(--head-font-color);
 }
 header .logo{
     position: absolute;
@@ -89,7 +114,6 @@ header .cart-shopping{
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: capitalize;
-    cursor: pointer;
     margin-left: 50px;
 }
 header .cart-shopping p{
@@ -97,6 +121,7 @@ header .cart-shopping p{
     position: relative;
     padding: 4px;
     color: var(--main-color);
+    cursor: pointer;
 }
 header .cart-shopping p .price{
     position: absolute;
@@ -110,11 +135,12 @@ header .side-bar{
     right: 0;
     top: 100%;
     display: none;
-    background-color: rgba(255, 255, 255, 0.7);;
+    background-color: #f7f7f7cf;
     height: calc(100vh - 100px);
     width: 300px;
     flex-direction: column;
     align-items: center;
+    color: var(--head-font-color);
 }
 header .side-bar.open{
     display: flex;
@@ -127,25 +153,42 @@ header .back{
     width: 100%;
     z-index: -1;
     left: 0;
-    top: 50px;
+    top: 100px;
     height: 600px;
     display: none;
 }
 header .back.top.open, header .back.open {
     display: block;
 }
-header .side-bar h1{
+.back.open.scrolling{
+    top: 50px;
+}
+header .container .side-bar h1{
     letter-spacing: 2px;
     text-transform: capitalize;
     padding: 8px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--head-font-color);
+    color: var(--second-color);
 }
 header .side-bar .products{
     flex: 8;
     width: 100%;
     overflow-x: hidden;
+    padding: 0;
+    justify-content: flex-start;
 }
-header .side-bar .products h1{
-    text-align: center;
+#empty-cart{
+    display: flex;
+    align-items: center;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    padding: 8px;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: var(--head-font-color);
 }
 header .side-bar .product{
     width: 100%;
@@ -155,28 +198,61 @@ header .side-bar .product{
     padding: 10px 5px;
     position: relative;
 }
+header .side-bar .products .product::after{
+    content: "";
+    position: absolute;
+    width: 90%;
+    border: 1px solid #b3b1b16e;;
+    bottom: 0;
+}
 header .side-bar .products .img{
     width: 70px;
     border-radius: 50%;
+    overflow: hidden;
 }
 header .side-bar .products .img img{
     width: 100%;
     border-radius: 50%;
-    padding: 10px;
+    /* padding: 10px; */
 }
-header .side-bar .products .product .price-card{
+header .side-bar .products .product .name-price-amount{
     width: 100%;
-    flex: 1;
+    display: flex;
+    font-size: 14px;
+    flex-direction: column;
+    height: 100px;
+    justify-content: space-evenly;
+}
+header .side-bar .products .product .name-price-amount .prod-name{
+    position: relative;
+}
+header .side-bar .products .product .name-price-amount .prod-name h3{
+    letter-spacing: .1rem;
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+}
+header .side-bar .products .product .name-price-amount .prod-name span{
+    color: rgba(0, 0, 0, 60%);
+    position: absolute;
+    right: 5px;
+    top: 0;
+    width: -moz-fit-content;
+    width: fit-content;
+    cursor: pointer;
+}
+header .side-bar .products .product .name-price-amount .prod-name span:hover{
+    color: rgba(0, 0, 0, 80%);
+}
+header .side-bar .products .product .name-price-amount .price-amount{
     display: flex;
     justify-content: space-around;
-    font-size: 20px;
 }
-header .side-bar .products .product::after{
-    content: "";
-    position: absolute;
-    width: 70%;
-    border: 1px solid white;
-    bottom: 0;
+header .side-bar .products .product .name-price-amount .price-amount span{
+    text-transform: uppercase;
+    color: var(--);
+    font-weight: 500;
+    letter-spacing: .2rem;
 }
 header .side-bar .sum{
     flex: 1 1;
@@ -216,87 +292,57 @@ header .side-bar .card-btns > button:hover{
 }
 /* end sidebar web*/
 /* start responsive */
-@media (max-width: 700px) {
-    header .container{
-        margin-top: 20px;
-    }
-    header .contact-all{
+@media (min-width: 670px){
+    header .contact-all .bar{
         display: none;
     }
-    header .contact-all.openNav{
-        display: flex;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, .6);
-        margin-right: 0;
-    }
-    header .contact-all.openNav.top{
-        top: 50px;
-    }
-    header .contact-all.openNav ul{
-        display: block;
-        padding: 20px;
-    }
-    header .contact-all.openNav ul li{
-        padding: 10px 20px;
-        position: relative;
-    }
-    header .contact-all.openNav ul li:hover a{
-        font-size: 25px;
-        transition: all .3s ease-in-out;
-    }
-    header .contact-all.openNav ul li:not(:last-child)::after{
-        content: "";
-        width: 100%;
-        height: 1px;
-        background-color: var(--main-color);
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translateX(-50%);
-    }
-    header .bar{
-        display: flex;
-        flex: 1;
-    }
-    header .bar div{
-        width: fit-content;
-        cursor: pointer;
-        display: flex;
-        flex: 1;
-        flex-direction: column;
+}
+@media (max-width: 670px){
+    header .contact-all{
+        justify-content: center;
         align-items: center;
     }
-    header .bar span{
-        background-color: var(--main-color);
-        width: 30px;
-        height: 3px;
-        margin: 3px;
-        border-radius: 20px;
+    header .contact-all ul.contact{
+        display: none;
     }
-}
-@media (max-width: 450px) {
-    header .contact-all.openNav{
-        width: 100%;
-    }
-    header .contact-all ul li a {
-        letter-spacing: 3px;
-    }
-    header .cart-shopping.cart-small{
-        display: flex;
-    }
-    header .cart-shopping.cart-small div{
+    header .contact-all .bar{
+        list-style: none;
+        width: 45px;
+        height: 30px;
+        cursor: pointer;
         position: relative;
     }
-    header .cart-shopping.cart-small div span{
+    header .contact-all .bar li{
         position: absolute;
-        top: -10px;
-        right: -15px;
-        color: var(--main-color);
+        height: 5px;
+        background-color: var(--main-color);
+        border-radius: 10px;
+        transition: all .2s ease-in-out;
+        width: 80%;
     }
-    header .side-bar.open{
-        width: 100%;
+    header .contact-all .bar li:first-child{
+        transform: rotate(0) translateY(50%);
+        top: 0;
+    }
+    header .contact-all .bar li:nth-child(2){
+        background-color: var(--main-color);
+        top: 50%;
+    }
+    header .contact-all .bar li:last-child{
+        transform: rotate(0) translateY(-50%);
+        top: 100%
+    }
+    header .contact-all .bar.clicked li{
+        z-index: 102;
+        top: 10px;
+    }
+    header .contact-all .bar.clicked li:first-child{
+        transform: rotate(45deg);
+    }
+    header .contact-all .bar.clicked li:nth-child(2){
+        background-color: transparent;
+    }
+    header .contact-all .bar.clicked li:last-child{
+        transform: rotate(-45deg);
     }
 }

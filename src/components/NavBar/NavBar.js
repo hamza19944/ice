@@ -110,42 +110,43 @@ const NavBar = ({ cartItem, handleEmpty }) => {
         handleSmall()
     })
 
-
     return (
         <header className={scrolling >= 10 ? "scroll" : ""}>
-            <div className={navOpen && top ? "contact-all openNav top" : (navOpen ? "contact-all openNav" : "contact-all")}>
-                <ul className="contact">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Store</a></li>
-                </ul>
-            </div>
-            <div className="logo">
-                <a href="#"><img src={logo} alt="" /></a>
-            </div>
-            <div className="bar">
-                <div onClick={handleNavOpen}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <div className="container">
+                <div className={navOpen && top ? "contact-all openNav top" : (navOpen ? "contact-all openNav" : "contact-all")}>
+                    <ul className="contact">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Store</a></li>
+                    </ul>
+                </div>
+                <div className="logo">
+                    <a href="#"><img src={logo} alt="" /></a>
+                </div>
+                <div className="bar">
+                    <div onClick={handleNavOpen}>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                {handleSmall()}
+                {/* start side bar */}
+                <div className={open ? "side-bar open" : "side-bar"}>
+                    <h1>Cart</h1>
+                    <div className="products">
+                        {prodCart.length > 0 ? prodCart : (<h1>Cart Is Empty, Choose Your Favorite Sweets</h1>)}
+                    </div>
+                    <div className="sum">
+                        total $ <span>{total[1]}</span>
+                    </div>
+                    <div className="card-btns">
+                        <button onClick={handleClear}>clear cart</button>
+                        <button>check out</button>
+                    </div>
                 </div>
             </div>
-            {handleSmall()}
-            {/* start side bar */}
-            <div className={open ? "back open": "back"} onClick={() => setOpen(false)}></div>
-            <div className={open ? "side-bar open" : "side-bar"}>
-                <h1>Cart</h1>
-                <div className="products">
-                    {prodCart.length > 0 ? prodCart : (<h1>Cart Is Empty, Choose Your Favorite Sweets</h1>)}
-                </div>
-                <div className="sum">
-                    total $ <span>{total[1]}</span>
-                </div>
-                <div className="card-btns">
-                    <button onClick={handleClear}>clear cart</button>
-                    <button>check out</button>
-                </div>
-            </div>
+            <div className={open && scrolling? "back open scrolling": open ? "back open" : ""} onClick={() => setOpen(false)}></div>
         </header>
     );
 }

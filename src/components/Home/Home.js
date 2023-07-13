@@ -9,18 +9,22 @@ import support from "../../assets/features/customer-service.png"
 import ScrollSection from "./ScrollSection";
 import Products from "../Products/Products";
 import WhyUs from "../Why-us/Why-us";
+import { memo } from "react";
 
-const Home = () => {
+const Home = ({ setChosenData, setIsRemoved, isRemoved, changeData, isCartChanged, setIsCartChanged }) => {
+    const handleData = (data) => {
+        setChosenData(data)
+    }
     return (
     <>
-        <div className="land">
+        <section className="land">
             <div className="container">
                 <h2><span>Our</span> Sweets Are Here</h2>
-                <a href="#our-store">Explore</a>
+                <a href="#products">Explore</a>
             </div>
-        </div>
+        </section>
         {/* start features */}
-        <div className="features">
+        <section className="features">
             <div className="our-features">
                 <span>Features</span>
                 <h1>Our Best Features</h1>
@@ -47,10 +51,10 @@ const Home = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse repudiandae a numquam natus, mollitia vel consectetur totam provident voluptatum, fugit assumenda omnis atque error iure earum quis, nulla aliquid nemo.</p>
                 </div>
             </div>
-        </div>
+        </section>
         {/* end features */}
         {/* <!-- start about us --> */}
-        <div className="about">
+        <section className="about">
             <div className="dark"></div>
             <div className="container">
                 <div className="about-us">
@@ -62,15 +66,15 @@ const Home = () => {
                     <img src={image} alt="" />
                 </div>
             </div>
-        </div>
+        </section>
         {/* <!-- start section filter --> */}
         <Services />
         {/* <Types /> */}
         <ScrollSection />
         <WhyUs />
-        <Products />
+        <Products handleData = {handleData} setIsRemoved = {setIsRemoved} isRemoved = {isRemoved} changeData = {changeData} isCartChanged = {isCartChanged} setIsCartChanged = {setIsCartChanged} />
     </>
     );
 }
  
-export default Home;
+export default memo(Home);

@@ -1,0 +1,10 @@
+.about-page{
+    padding: 130px 20px 20px 20px;
+    height: calc(100vh - 100px);
+}
+.about-page h2{
+    color: var(--main-color);
+}
+.about-page p{
+    color: var(--main-font-color);
+}

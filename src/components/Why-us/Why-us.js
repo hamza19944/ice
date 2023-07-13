@@ -6,7 +6,7 @@ import healthy from "../../assets/why/ice-cream (2).png"
 import rightPic from "../../assets/view-decoration-with-cones-flowers.jpg"
 const WhyUs = () => {
     return (
-        <div className="why-us">
+        <section className="why-us">
             <div className="container">
                 <div className="left">
                 <div className="head">
@@ -48,7 +48,7 @@ const WhyUs = () => {
                     <img src={rightPic} alt="" />
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
  

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./footer.css"
 const Footer = () => {
     return (
-        <div className="footer">
+        <section className="footer">
             <div className="with-logo footer-item">
                 <div className="img">
                     <img src={logo} alt="logo" />
@@ -35,7 +35,7 @@ const Footer = () => {
                 </ul>
             </div>
             
-        </div>
+        </section>
     );
 }
  
