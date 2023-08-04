@@ -16,6 +16,9 @@ html{
 body{
     font-family: 'Lemonada', cursive;
 }
+.css-nicjba-MuiContainer-root{
+    padding-top: 100px;
+}
 /* start components */
 .btn{
     border: 3px solid black;

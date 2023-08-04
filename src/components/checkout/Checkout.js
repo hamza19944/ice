@@ -41,7 +41,6 @@ export default function Checkout() {
     }
   }
   const buttonDis = (e) => {
-    console.log(dataOk);
     if(dataOk) {
       handleNext(); 
     }
