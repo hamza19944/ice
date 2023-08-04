@@ -1,18 +1,16 @@
 import "./products.css"
 import image from "../../assets/bkbk.png"
-import { useEffect, useState } from "react";
+import { DataCtx } from "../context/Context"
+import { useEffect, useState, useContext } from "react";
 const Products = ({ handleData, setIsRemoved, isRemoved, changeData, isCartChanged, setIsCartChanged }) => {
     // declaring states
     const [chosen, setChosen] = useState([])
-
-    const data = [
-        {id: 1, name: "delicious ice-cream 1", price: 150, img: image, count: 0},
-        {id: 2, name: "delicious ice-cream 2", price: 200, img: image, count: 0},
-        {id: 3, name: "delicious ice-cream 3", price: 110, img: image, count: 0},
-        {id: 4, name: "delicious ice-cream 4", price: 90, img: image, count: 0},
-        {id: 5, name: "delicious ice-cream 5", price: 150, img: image, count: 0},
-        {id: 6, name: "delicious ice-cream 6", price: 150, img: image, count: 0},
-    ]
+    const {dataCtx, chosenDataCtx, setChosenDataCtx} = useContext(DataCtx)
+    const [data, setData] = useState([])
+    
+    useEffect(() => {
+        setData(() => dataCtx)
+    }, [data])
     // function for the data
     const sentData =(cdt, dt, allRemoved, oneRemoved) => {
         let filtered = []
@@ -46,6 +44,7 @@ const Products = ({ handleData, setIsRemoved, isRemoved, changeData, isCartChang
     // for sending the chosen data
     let arr = []
     useEffect(() => {
+        setChosenDataCtx(sentData(changeData, chosen, isRemoved, isCartChanged))
         handleData(sentData(changeData, chosen, isRemoved, isCartChanged))
     }, [changeData, chosen, isRemoved, isCartChanged])
 

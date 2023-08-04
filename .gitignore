@@ -4,7 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-./src/assets/flyer.docx
+src/assets/flyer.docx
+src/assets/logo-high-1.png
 # testing
 /coverage
 

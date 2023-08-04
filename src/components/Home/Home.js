@@ -6,12 +6,14 @@ import certificate from "../../assets/features/contract.png"
 import credit from "../../assets/features/credit-card.png"
 import support from "../../assets/features/customer-service.png"
 // import Types from "./Types";
+import DataProvider from "../context/Context";
 import ScrollSection from "./ScrollSection";
 import Products from "../Products/Products";
 import WhyUs from "../Why-us/Why-us";
 import { memo } from "react";
 
-const Home = ({ setChosenData, setIsRemoved, isRemoved, changeData, isCartChanged, setIsCartChanged }) => {
+
+const Home = memo(({ setChosenData, setIsRemoved, isRemoved, changeData, isCartChanged, setIsCartChanged }) => {
     const handleData = (data) => {
         setChosenData(data)
     }
@@ -53,28 +55,16 @@ const Home = ({ setChosenData, setIsRemoved, isRemoved, changeData, isCartChange
             </div>
         </section>
         {/* end features */}
-        {/* <!-- start about us --> */}
-        <section className="about">
-            <div className="dark"></div>
-            <div className="container">
-                <div className="about-us">
-                    <h2>About <span>Us</span></h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse repudiandae a numquam natus, mollitia vel consectetur totam provident voluptatum, fugit assumenda omnis atque error iure earum quis, nulla aliquid nemo.</p>
-                    <input type="button" value="More" className="btn" />
-                </div>
-                <div className="image">
-                    <img src={image} alt="" />
-                </div>
-            </div>
-        </section>
         {/* <!-- start section filter --> */}
         <Services />
         {/* <Types /> */}
         <ScrollSection />
         <WhyUs />
-        <Products handleData = {handleData} setIsRemoved = {setIsRemoved} isRemoved = {isRemoved} changeData = {changeData} isCartChanged = {isCartChanged} setIsCartChanged = {setIsCartChanged} />
+        <DataProvider>
+            <Products handleData = {handleData} setIsRemoved = {setIsRemoved} isRemoved = {isRemoved} changeData = {changeData} isCartChanged = {isCartChanged} setIsCartChanged = {setIsCartChanged} />
+        </DataProvider>
     </>
     );
-}
+})
  
-export default memo(Home);
+export default Home;

@@ -1,0 +1,39 @@
+.lazy{
+    height: 100vh;
+    font-size: 24pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.lazy span{
+    border: 2px solid #49bef278;
+    border-radius: 50%;
+    display: flex;
+    animation: load 1s linear 1s  infinite;
+}
+.lazy span img{
+    height: 100px;
+}
+@keyframes load{
+    0%{
+        padding: 10px;
+        border: 2px solid #49bef278;
+    }
+    25%{
+        padding: 20px;
+        border : 2px solid #49bef24a;
+    }
+    50%{
+        padding: 30px;
+        border: 2px solid #49bef226;
+    }
+    75%{
+        padding: 40px;
+        border: 2px solid #49bef214;
+    }
+    100%{
+        padding: 50px;
+        border: 2px solid #49bff200;
+    }
+}

@@ -62,13 +62,18 @@
 }
 /* start pic part */
 .why-us .container .pic{
-    flex: 1;
+    flex: 2;
     display: flex;
 }
 .why-us .container .pic img{
     width: 100%;
 }
 /* media query */
+@media (max-width: 1100px){
+    .why-us .container .pic{
+        display: none;
+    }
+}
 @media (max-width: 820px){
     .why-us .container {
         flex-direction: column;

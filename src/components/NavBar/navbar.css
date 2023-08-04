@@ -132,18 +132,19 @@ header .cart-shopping p .price{
 /* start sidebar */
 header .side-bar{
     position: absolute;
-    right: 0;
+    right: -300px;
     top: 100%;
-    display: none;
+    display: flex;
     background-color: #f7f7f7cf;
     height: calc(100vh - 100px);
     width: 300px;
     flex-direction: column;
     align-items: center;
     color: var(--head-font-color);
+    transition: all .1s ease-in-out;
 }
 header .side-bar.open{
-    display: flex;
+    right: 0;
 }
 header .back{
     position: absolute;
@@ -274,17 +275,30 @@ header .side-bar .card-btns{
     justify-content: space-evenly;
     width: 100%;
     padding: 10px 0;
+    font-family: "Lemonada", cursive;
 }
 header .side-bar .card-btns > button{
     padding: 10px 15px;
     border-radius: 15px;
     border: none;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
     text-transform: capitalize;
     cursor: pointer;
-    height: fit-content;
-    transition: all .3s ease-in-out;
+    /* height: fit-content; */
+    transition: all .5s ease-in-out;
+} 
+header .side-bar .card-btns > button:last-child{
+    padding: 0;
+    border-radius: 15px;
+}
+header .side-bar .card-btns button a{
+    border-radius: 15px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    font-size: 17px;
+    padding: 20px 15px;
 }
 header .side-bar .card-btns > button:hover{
     background-color: transparent;

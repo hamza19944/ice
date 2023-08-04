@@ -1,10 +1,10 @@
 import "./navbar.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../../assets/logo.png"
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
-const Nav = ({ chosenData, setIsRemoved, setChangeData, setIsCartChanged }) => {
+const Nav = memo(({ chosenData, setIsRemoved, setChangeData, setIsCartChanged }) => {
     // declaring states
     const [open, setOpen] = useState(false)
     const [num, setNum] = useState(0)
@@ -31,6 +31,10 @@ const Nav = ({ chosenData, setIsRemoved, setChangeData, setIsCartChanged }) => {
         setTimeout(() => {
             setOpen(false)
         }, 700)
+    }
+    // handle checout page
+    const handleCheckout = () => {
+        console.log(localStorage.getItem("Products"))
     }
     const handleChangeData = (idDelete) => {
         let newArr = chosenData.filter(dt => dt.id !== idDelete)
@@ -102,13 +106,13 @@ const Nav = ({ chosenData, setIsRemoved, setChangeData, setIsCartChanged }) => {
                     </div>
                     <div className="card-btns">
                         <button onClick={handleClear}>Clear cart</button>
-                        <button>Check out</button>
+                        <button><Link to="/checkout" onClick={() => setOpen(false)}>Check out</Link></button>
                     </div>
                 </div>
-                <div className={open ? "back open" : "back"} onClick={() => setOpen(false)}></div>
+                <div className={open ? "back open" : "back"} onClick={() => {handleCheckout(); setOpen(false)}}></div>
             </section>
         </header>
     );
-}
+})
  
 export default Nav;
